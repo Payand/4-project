@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --black-logo: #0b0101;
+  --color-font: #ffffff;
+}
+body {
+  font-family: "Dancing Script", cursive;
+}
+
+/* header start */
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("../img/cup-jo-min.jpg");
+  height: 100vh;
+  padding: 2.5em 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--color-font);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav ul {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 400;
+  gap: 2em;
+}
+
+header nav .logo {
+  font-size: 3rem;
+  font-weight: 500;
+  border: 1px white solid;
+  margin-right: auto;
+}
+
+header nav .logo span {
+  background-color: var(--color-font);
+  color: var(--black-logo);
+}
+header .info {
+  margin-top: 5em;
+}
+
+header .info h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 3em;
+  text-transform: capitalize;
+}
+
+header .info h2 {
+  font-size: 2rem;
+  margin-left: 20em;
+}
+
+@media (max-width: 1080px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5em;
+  }
+  header nav .logo {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: row;
+  }
+  header nav ul {
+    display: none;
+  }
+  header .info h2 {
+    margin-left: 10em;
+    margin-bottom: 2em;
+  }
+}
+
+/* header end */
+
+/* main starts */
+.pro-sec {
+  background-color: var(--color-font);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.pro-sec div {
+  background-position: center;
+  width: 33.5%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: var(--color-font);
+}
+.pro-sec div p {
+  margin-top: 1em;
+}
+.img-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.895), rgba(0, 0, 0, 0.073)),
+    url("../img/menu-min.jpg");
+}
+
+.img-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.895), rgba(0, 0, 0, 0.073)),
+    url("../img/qulity-min.jpg");
+}
+.img-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.895), rgba(0, 0, 0, 0.073)),
+    url("../img/friendship-min.jpg");
+}
+
+.serv-sec {
+  display: flex;
+  height: 70vh;
+}
+.content-text {
+  background-color: #030000;
+  width: 50%;
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  overflow: auto;
+  padding-left: 1em;
+  color: #ffffff;
+}
+.content-text p {
+  padding-top: 1em;
+}
+
+.img-service {
+  background-image: url("../img/nathan-dumlao-XOhI_kW_TaM-unsplash-min.jpg");
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+/* main ends  */
+
+/* footer starts  */
+footer {
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.708), rgba(0, 0, 0, 0.3));
+}
+
+i {
+  font-size: 2.5rem;
+}
+
+.footer-container {
+  display: flex;
+  height: 40vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* footer ends  */
