@@ -219,7 +219,7 @@ header .info h2 {
 .content-text p {
   padding: 1em;
   text-align: center;
-  text-shadow: var(--text-neon);
+  /* text-shadow: var(--text-neon); */
 }
 
 .img-service,
