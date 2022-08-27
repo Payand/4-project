@@ -7,11 +7,22 @@ html {
 :root {
   --black-logo: #0b0101;
   --color-font: #ffffff;
+  --linear-gradiant: linear-gradient(
+    rgba(0, 0, 0, 0.895),
+    rgba(0, 0, 0, 0.073)
+  );
+  --linear-gr-header: linear-gradient(
+    rgb(0, 0, 0),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.1)
+  );
+  --text-neon: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
 }
 
 body {
   font-family: "Dancing Script", cursive;
-  background-image: url("../img/bg-coffee.jpg");
+  background-image: var(--linear-gradiant), url("../img/bg-main.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -20,34 +31,17 @@ body {
 
 /* header start */
 .container {
-  width: 95%;
+  width: 85%;
   margin: 0 auto;
-}
-
-@media (max-width: 800px) {
-  .container {
-    width: 85%;
-  }
-}
-
-@media (min-width: 1500px) {
-  .container {
-    width: 1200px;
-  }
 }
 
 header {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(
-      rgb(0, 0, 0),
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.8)
-    ),
-    url("../img/cup-jo-min.jpg");
+  background-image: var(--linear-gr-header), url("../img/coffee-header-min.jpg");
   height: 100vh;
   padding: 2.5em 0;
-  background-position: center;
+  background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--color-font);
@@ -57,6 +51,8 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #fff;
+  text-shadow: var(--text-neon);
 }
 
 header nav ul {
@@ -71,6 +67,7 @@ header nav .logo {
   font-weight: 500;
   border: 1px white solid;
   margin-right: auto;
+  animation: flicker 3s infinite alternate;
 }
 
 header nav .logo span {
@@ -85,55 +82,233 @@ header .info h1 {
   font-size: 4rem;
   font-weight: 700;
   margin-top: 2.3em;
+  margin-left: 1.5em;
   text-transform: capitalize;
+  text-shadow: var(--text-neon);
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: var(--text-neon);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }
 
 header .info h2 {
   font-size: 2rem;
   margin-left: 20em;
-  margin-top: -2rem;
+  padding-top: 1rem;
+  color: #fff;
+  text-shadow: var(--text-neon);
 }
 
+.pg-title,
+.pg-title-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: var(--text-neon);
+  height: 50vh;
+  width: 100%;
+  margin-top: 2.5em;
+}
+
+/* header end */
+
+/* main starts */
+
+/* section product starts  */
+
+.pro-sec {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 700;
+  margin-top: 10em;
+}
+.pro-sec div {
+  background-position: center;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-font);
+}
+.pro-sec h3 {
+  font-size: 2rem;
+  margin-top: 0.5em;
+  text-shadow: var(--text-neon);
+}
+
+.pro-sec p {
+  font-size: 1.5rem;
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 1s;
+  transition: height 3s;
+  width: 100%;
+  height: 20vh;
+  background-color: rgba(5, 0, 0, 0.5);
+  padding: 1em;
+  overflow: hidden;
+}
+
+.pro-sec p:hover {
+  opacity: 1;
+  height: 100vh;
+}
+
+.pro-sec .img-1,
+.pro-sec .img-2,
+.pro-sec .img-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-1 {
+  background-image: var(--linear-gradiant), url("../img/menu-min.jpg");
+}
+
+.img-2 {
+  background-image: var(--linear-gradiant), url("../img/qulity-min.jpg");
+}
+.img-3 {
+  background-image: var(--linear-gradiant), url("../img/friends-min.jpg");
+}
+
+/* section product ends  */
+
+/* section services starts  */
+
+.serv-sec,
+.serv-sec-one {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+
+.content-text {
+  background-color: rgba(0, 0, 0, 0.527);
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  overflow: auto;
+  padding-top: 6em;
+
+  color: var(--color-font);
+  overflow: hidden;
+  transition: width ease-in-out 3s;
+}
+
+.content-text p {
+  padding: 1em;
+  text-align: center;
+  text-shadow: var(--text-neon);
+}
+
+.img-service,
+.img-service-one {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.img-service {
+  background-image: url("../img/bar-min.jpg");
+}
+.img-service-one {
+  background-image: url("../img/coffe-shop.jpg");
+}
+
+.serv-sec {
+  margin-top: 10em;
+}
+.serv-sec-one {
+  justify-content: flex;
+}
+
+/* section product ends  */
+
+/* main ends  */
+
+/* footer starts  */
+footer {
+  width: 100%;
+  margin-top: 10em;
+  background-image: var(--linear-gradiant);
+}
+
+.footer-container i {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.541);
+  text-shadow: var(--text-neon);
+}
+
+.footer-container a {
+  transition: 3s;
+}
+
+.footer-container a:hover {
+  transform: rotateY(360deg);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 15vh;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 8em;
+}
+
+/* footer ends  */
+
+/* responsive  */
+
+/* header responsive starts */
 @media (max-width: 1080px) {
   header nav {
     flex-direction: column;
     align-items: center;
     gap: 2.5em;
   }
+  header .info h1 {
+    font-size: 6rem;
+  }
+
   header nav .logo {
     margin: 0;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   header nav {
     flex-direction: row;
   }
   header .info h1 {
-    font-size: 2.56rem;
-  }
-  header nav ul {
-    display: none;
-  }
-  header .info h2 {
-    font-size: 1rem;
-    margin-left: 15em;
-    margin-top: 0.5em;
-  }
-}
-
-@media (min-width: 769px) {
-  header nav {
-    flex-direction: row;
-  }
-  header .info h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   header .info h2 {
-    font-size: 2rem;
-    margin-left: 19em;
-    margin-top: 1em;
+    font-size: 1.5rem;
+    margin-left: 20em;
+    margin-top: -4rem;
   }
 }
 
@@ -153,7 +328,6 @@ header .info h2 {
     display: none;
   }
   .pro-sec {
-    flex-direction: column;
     justify-content: space-between;
   }
   .pro-sec .img-1,
@@ -162,128 +336,34 @@ header .info h2 {
     height: 100vh;
     width: 100%;
   }
+  .serv-sec {
+    flex-wrap: wrap;
+    margin-top: 20em;
+  }
+  .serv-sec-one {
+    flex-wrap: wrap;
+    margin-top: 30em;
+  }
+  footer {
+    padding-top: 25em;
+  }
 }
 
-/* header end */
+/* header responsive ends */
 
-/* main starts */
-.pro-sec {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-weight: 700;
-  margin-top: 30em;
-}
-.pro-sec div {
-  background-position: center;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* container responsive starts */
 
-  color: var(--color-font);
-}
-.pro-sec h3 {
-  font-size: 2rem;
-  margin-top: 1em;
+@media (max-width: 800px) {
+  .container {
+    width: 95%;
+  }
 }
 
-.pro-sec p {
-  font-size: 1.5rem;
-  text-align: center;
-  opacity: 0.5;
-  transition: opacity 1s;
-  transition: height 3s;
-  width: 100%;
-  height: 20vh;
-  background-color: rgba(5, 0, 0, 0.5);
-  padding-top: 1em;
-  overflow: hidden;
+@media (min-width: 1500px) {
+  .container {
+    width: 1200px;
+  }
 }
+/* container responsive ends */
 
-.pro-sec p:hover {
-  opacity: 1;
-  height: 100vh;
-}
-
-.pro-sec .img-1,
-.pro-sec .img-2,
-.pro-sec .img-3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.img-1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.895), rgba(0, 0, 0, 0.073)),
-    url("../img/menu-min.jpg");
-}
-
-.img-2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.895), rgba(0, 0, 0, 0.073)),
-    url("../img/qulity-min.jpg");
-}
-.img-3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.895), rgba(0, 0, 0, 0.073)),
-    url("../img/friendship-min.jpg");
-}
-
-.serv-sec {
-  display: flex;
-  height: 70vh;
-  margin-top: 30em;
-}
-
-.content-text {
-  background-color: #0300004b;
-  width: 50%;
-  font-size: 1.5rem;
-  text-align: left;
-  font-weight: 600;
-  overflow: auto;
-  padding-left: 1em;
-  color: #ffffff;
-}
-.content-text p {
-  padding-top: 1em;
-}
-
-.img-service {
-  background-image: url("../img/nathan-dumlao-XOhI_kW_TaM-unsplash-min.jpg");
-  width: 50%;
-  background-position: center;
-  background-size: cover;
-}
-
-/* main ends  */
-
-/* footer starts  */
-footer {
-  width: 100%;
-  margin-top: 30em;
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
-}
-
-.footer-container i {
-  font-size: 2rem;
-  color: var(--color-font);
-}
-
-.footer-container a {
-  transition: 3s;
-}
-
-.footer-container a:hover {
-  transform: scale(1.5, 1.5) rotateX(360deg);
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  height: 20vh;
-  justify-content: space-around;
-  align-items: center;
-}
-
-/* footer ends  */
+/* end responsive */
