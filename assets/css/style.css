@@ -8,6 +8,11 @@ html {
 }
 body {
   font-family: "Dancing Script", cursive;
+  background-image: url("../img/bg-coffee.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* header start */
@@ -117,8 +122,8 @@ header .info h2 {
   height: 100vh;
   display: flex;
   justify-content: center;
-  font-size: 2.5rem;
   font-weight: 700;
+  margin-top: 20em;
 }
 .pro-sec div {
   background-position: center;
@@ -128,9 +133,23 @@ header .info h2 {
   text-align: center;
   color: var(--color-font);
 }
-.pro-sec div p {
-  margin-top: 1em;
+.pro-sec h3 {
+  font-size: 3rem;
 }
+
+.pro-sec p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.pro-sec .img-1,
+.pro-sec .img-2,
+.pro-sec .img-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .img-1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.895), rgba(0, 0, 0, 0.073)),
     url("../img/menu-min.jpg");
@@ -148,7 +167,9 @@ header .info h2 {
 .serv-sec {
   display: flex;
   height: 70vh;
+  margin-top: 20em;
 }
+
 .content-text {
   background-color: #030000;
   width: 50%;
@@ -180,6 +201,7 @@ footer {
 
 i {
   font-size: 2.5rem;
+  color: var(--color-font);
 }
 
 .footer-container {
